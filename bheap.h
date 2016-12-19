@@ -17,6 +17,7 @@ void bheap_free(bheap*);
 
 int bheap_add(bheap*, int, void*);
 bheap_node bheap_get(bheap*);
+int bheap_is_empty(bheap*);
 
 void bheap_print(bheap* heap);
 

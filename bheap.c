@@ -44,6 +44,16 @@ bheap_add(bheap* heap, int val, void* opt)
   return TRUE;
 }
 
+int
+bheap_is_empty(bheap* heap)
+{
+  if (heap->tail < 0) {
+    return TRUE;
+  } else {
+    return FALSE;
+  }
+}
+
 void
 bheap_remove_root(bheap* heap)
 {
