@@ -15,8 +15,8 @@ typedef struct {
 bheap* bheap_new(int);
 void bheap_free(bheap*);
 
-int bheap_add(bheap*, int, void*);
-bheap_node bheap_get(bheap*);
+int bheap_push(bheap*, int, void*);
+bheap_node bheap_pop(bheap*);
 int bheap_is_empty(bheap*);
 
 void bheap_print(bheap* heap);

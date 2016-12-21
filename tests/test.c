@@ -21,16 +21,16 @@ int main(void){
   // create binary-heap structure
   h = bheap_new(10);
   // add data
-  bheap_add(h, item1.id, (void*)&item1);
-  bheap_add(h, item2.id, (void*)&item2);
-  bheap_add(h, item3.id, (void*)&item3);
-  bheap_add(h, item4.id, (void*)&item4);
-  bheap_add(h, item5.id, (void*)&item5);
+  bheap_push(h, item1.id, (void*)&item1);
+  bheap_push(h, item2.id, (void*)&item2);
+  bheap_push(h, item3.id, (void*)&item3);
+  bheap_push(h, item4.id, (void*)&item4);
+  bheap_push(h, item5.id, (void*)&item5);
 
   // iterate process until the heap become empty
   while (!bheap_is_empty(h)) {
     // get data in the root of the heap.
-    p = (item_t*)bheap_get(h).opt;
+    p = (item_t*)bheap_pop(h).opt;
     printf("id:%d,name:%s\n", p->id, p->name);
   }
 

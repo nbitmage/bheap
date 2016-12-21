@@ -33,7 +33,7 @@ bheap_free(bheap* heap)
 }
 
 int
-bheap_add(bheap* heap, int val, void* opt)
+bheap_push(bheap* heap, int val, void* opt)
 {
   bheap_node *node;
   // if (heap->tail == heap->len - 1) bheap_extend(heap);
@@ -62,7 +62,7 @@ bheap_remove_root(bheap* heap)
 }
 
 bheap_node
-bheap_get(bheap* heap)
+bheap_pop(bheap* heap)
 {
   bheap_node node;
   node = heap->nodes[0];
