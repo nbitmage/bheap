@@ -87,8 +87,8 @@ bheap_bubble_up(bheap* heap)
   nodes = heap->nodes;
   tail_node = nodes[heap->tail];
 
-  for (i = heap->tail; i > 0 && tail_node.val > nodes[i/2].val; i = i / 2) {
-    nodes[i] = nodes[i/2];
+  for (i = heap->tail; i > 0 && tail_node.val > nodes[(i-1)/2].val; i = (i-1)/2) {
+    nodes[i] = nodes[(i-1)/2];
   }
   nodes[i] = tail_node;
 }
