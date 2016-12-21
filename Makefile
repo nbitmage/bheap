@@ -15,7 +15,18 @@ $(BIN_DIR):
 
 .PHONY: test
 test: $(BINS)
-	@for target in $(BINS);do $$target || exit 893; done
+	@for target in $(BINS); \
+	do \
+		$$target > $$target.out; \
+		answer=$(TEST_DIR)/$$(basename $$target).out; \
+		if diff -q $$target.out $$answer > /dev/null; \
+		then \
+		 	echo "$$target: OK"; \
+		else \
+			echo "$$target: NG"; \
+			exit 893; \
+		fi; \
+	done
 
 .PHONY: clean
 clean:
