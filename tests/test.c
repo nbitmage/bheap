@@ -3,27 +3,38 @@
 
 typedef struct {
   int id;
-  const char* name;
-} user_t;
+  int price;
+  char* name;
+} item_t;
 
 int main(void){
   bheap *h;
+  item_t *p;
 
-  user_t usr1 = {1, "rk0der"};
-  user_t usr2 = {31, "john"};
-  user_t usr3 = {18, "mike"};
-  user_t usr4 = {2, "keen"};
-  user_t usr5 = {13, "vlad"};
+  // prepare data for test
+  item_t item1 = {8,  120,  "apple"};
+  item_t item2 = {4,  80,   "orange"};
+  item_t item3 = {32, 100,  "banana"};
+  item_t item4 = {2,  130,  "kiwi"};
+  item_t item5 = {8,  150,  "grape"};
 
+  // create binary-heap structure
   h = bheap_new(10);
-  bheap_add(h, -usr1.id, (void*)&usr1);
-  bheap_add(h, -usr2.id, (void*)&usr2);
-  bheap_add(h, -usr3.id, (void*)&usr3);
-  bheap_add(h, -usr4.id, (void*)&usr4);
-  bheap_add(h, -usr5.id, (void*)&usr5);
-  for (int i = 0; i < 5; i++) {
-    printf("%s\n", ((user_t*)bheap_get(h).opt)->name);
+  // add data
+  bheap_add(h, item1.id, (void*)&item1);
+  bheap_add(h, item2.id, (void*)&item2);
+  bheap_add(h, item3.id, (void*)&item3);
+  bheap_add(h, item4.id, (void*)&item4);
+  bheap_add(h, item5.id, (void*)&item5);
+
+  // iterate process until the heap become empty
+  while (!bheap_is_empty(h)) {
+    // get data in the root of the heap.
+    p = (item_t*)bheap_get(h).opt;
+    printf("id:%d,name:%s\n", p->id, p->name);
   }
+
+  // free memory space allocated for heap
   bheap_free(h);
   return 0;
 }
