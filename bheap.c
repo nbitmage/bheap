@@ -33,10 +33,27 @@ bheap_free(bheap* heap)
 }
 
 int
+bheap_extend(bheap* heap)
+{
+  bheap_node* tmp;
+  int new_len;
+
+  new_len = heap->len * 2;
+  tmp = (bheap_node*)realloc(heap->nodes, sizeof(bheap_node) * new_len);
+  if (tmp) {
+    heap->len = new_len;
+    heap->nodes = tmp;
+    return TRUE;
+  } else {
+    return FALSE;
+  }
+}
+
+int
 bheap_push(bheap* heap, int val, void* opt)
 {
   bheap_node *node;
-  // if (heap->tail == heap->len - 1) bheap_extend(heap);
+  if (heap->tail == heap->len - 1) bheap_extend(heap);
   node = &heap->nodes[++heap->tail];
   node->val = val;
   node->opt = opt;
