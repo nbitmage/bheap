@@ -12,3 +12,15 @@ As you know, binary heap is used in;
 and so on. The data structure has better performance compared to others.
 
 See the directry **tests/** to learn the library usage.
+## Usage
+
+```
+bheap *h = bheap_new();
+bheap_push(h, 3, (void*)"three");
+bheap_push(h, 1, (void*)"one");
+bheap_push(h, 2, (void*)"two");
+printf("%s\n", (char*)bheap_pop(h));
+printf("%s\n", (char*)bheap_pop(h));
+printf("%s\n", (char*)bheap_pop(h));
+bheap_free(h);
+```
