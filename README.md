@@ -36,3 +36,7 @@ three
 ```
 
 See the directry **tests/** to learn the library usage.
+
+## License
+
+MIT license (© 2017 Ryota Kota)
