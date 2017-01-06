@@ -37,6 +37,13 @@ three
 
 See the directry **tests/** to learn the library usage.
 
+
+## Contributing
+
+Send a pull request to <http://github.com/rk0der/bheap>. We welcome your great  
+idea for this project. Feel free to contribute your code to the project. You can  
+use <http://github.com/rk0der/bheap/issues> for discussion. 
+
 ## License
 
 MIT license (© 2017 Ryota Kota)
