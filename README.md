@@ -47,3 +47,4 @@ use <http://github.com/rk0der/bheap/issues> for discussion.
 ## License
 
 MIT license (© 2017 Ryota Kota)
+
